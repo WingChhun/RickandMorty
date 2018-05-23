@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
@@ -2442,3 +2443,7 @@ In the future, we might start automatically compiling incompatible third-party m
 ## Something Missing?
 
 If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebookincubator/create-react-app/issues) or [contribute some!](https://github.com/facebookincubator/create-react-app/edit/master/packages/react-scripts/template/README.md)
+=======
+# RickandMorty
+Small side project to utilize Rick and morty API, to  reinforce React practices learned from LevelUpTut's React 16 For Everyone, as well as make sure Sass will work in my worfklow
+>>>>>>> 4e1ac0f779451c0715a6bc351a487fbabb0fefbf
