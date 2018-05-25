@@ -5,9 +5,15 @@ class Searchbox extends Component
 
     render()
     {
+        //destructure props
+        const {searchBox, updateSearch} = this.props;
+
         return (
-            <div>
-                <h1>Searchbox</h1>
+            <div className="searchbox">
+                <input
+                    type="text"
+                    onChange={updateSearch}
+                    placeholder="search for a character"/>
             </div>
 
         );
