@@ -2,26 +2,24 @@
 //Import scss components
 
 //variables and utility
-@import "./sass/variables/variables.scss";
+@import "./sass/variables.scss";
 //Layout
-@import "./sass/layout/home.scss";
+@import "./sass/home.scss";
 //typography
-@import "./sass/typography/typography.scss";
+@import "./sass/typography.scss";
 
 //components
-@import "./sass/components/card.scss";
-
-
+@import "./sass/card.scss";
 
 //Initial reset
 body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-  }
-  
-  //test
-.main
-{
-    background-color:black;
+
+}
+
+//test
+.main {
+    background-color: black;
 }
