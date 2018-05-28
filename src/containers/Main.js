@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import "../main.css";
-
+import "../../node_modules/font-awesome/css/font-awesome.min.css";
 //import components main class
 
 import Navigation from "../components/Navigation/Navigation";
@@ -67,8 +67,8 @@ class Main extends Component
 
                 <Searchbox searchBox={this.state.searchBox} updateSearch ={updateSearch}/> {/*CardList*/}
                 <CardList updateAPI={updateAPI} accessAPI ={this.state.results}/> {/*Pagination*/}
-                {/*Pagination*/}
-                {/*Footer*/}
+                <Pagination/>
+                <Footer/>
 
             </div>
 
