@@ -32,20 +32,22 @@ body {
 }
 
 //navigation
-.nav {
+.nav h1 {
     font-family: RickAndMorty, sans-serif;
     letter-spacing: 0.1rem;
     color: $color-portal-dark;
-    border: $border-test-primary;
+    
     padding: $padding-test;
     text-align: center;
+    font-size:50px;
     margin-bottom: 20px;
+transform:rotate(-2deg);
 }
 
 //Searchbox 
 .searchbox {
     //test css for now
-    border: $border-test-primary;
+    
     padding: $padding-test;
     text-align: center;
     margin-bottom: 20px;
@@ -83,6 +85,7 @@ body {
         //clickable and add padding
         padding: 8px 12px;
         border: $border-button;
+        font-size: 36px;
         transition: 0.4s all ease;
         &:hover {
             cursor: pointer;
@@ -103,8 +106,7 @@ body {
     margin-bottom: 0;
     text-align: center;
     height: 200px;
-    position: absolute;
-    //bottom: 0;
+    position: absolute; //bottom: 0;
     width: 100%;
     text-align: center; //container for icons
     &__icon {
@@ -136,8 +138,7 @@ body {
         &:active {
             transform: translateY(5px);
         }
-    }
-    //link for james chhun website
+    } //link for james chhun website
     &__portfolio {
         text-decoration: none;
         color: $color-portal-dark;
@@ -166,12 +167,56 @@ body {
 //
 .cardlist {
     min-height: 350px;
-
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
 }
+
 //
 //CARD
 //
 .card {
-
+    flex: 1 0 24%;
+    max-width: 24%;
+    border: $border-button;
+    margin-bottom: 1rem;
+    box-shadow: 4px 7px 10px rgba(#000, .4);
+    &__img {
+        width: 100%;
+        height: 300px;
+        position: relative; //position relative to make overlay
     }
+    &__name {
+        color: $color-primary;
+        letter-spacing: .1rem;
+        font-size: 26px;
+        text-align: center;
+        margin: 0;
+        padding: 12px 0;
+        background-color: rgba(#333, .6);
+    }
+    &__list {
+        &--container {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+        }
+        &--item {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 3px 10px;
+            font-size: 16px;
+            letter-spacing: .5px;
+            border-bottom: 2px solid $color-portal-dark;
+            &:last-child {
+                border-bottom: none;
+            }
+            &--key {}
+            &--value {}
+        }
+    }
+}
