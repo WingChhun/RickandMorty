@@ -4,7 +4,7 @@ import "../../main.css"; //import css
 //import card component
 import Card from "./Card";
 
-const API_URL = "https://rickandmortyapi.com/api/character/";
+const API_URL = "https://rickandmortyapi.com/api/character/?page=";
 let API_INFO = {};
 let API_RESULTS = [];
 class CardList extends Component
@@ -13,13 +13,13 @@ class CardList extends Component
     {
         super(props);
         this.updateAPI = this.props.updateAPI;
-
+        this.page = this.props.page;
     }
     //handle API
     async componentDidMount()
     {
 
-        const res = await fetch(API_URL);
+        const res = await fetch(`${API_URL}${this.page}`);
         const {info, results} = await res.json();
 
         //set state, using function passed from main container
@@ -36,6 +36,9 @@ class CardList extends Component
         console.log("API_INFO", API_INFO);
         console.log("API_RESULTS", API_RESULTS);
     }
+
+x
+
     // @function mapCards @Purpose - Return Cards as List Items using
     // this.state.results
     render()
@@ -63,6 +66,7 @@ CardList.propTypes = { //access this.state.info
         .isRequired,
     isConnected: PropTypes.bool.isRequired,
     updateAPI: PropTypes.func.isRequired,
-    resultsAPI: PropTypes.array.isRequired
+    resultsAPI: PropTypes.array.isRequired,
+    page: PropTypes.number.isRequired
 }
 export default CardList;
