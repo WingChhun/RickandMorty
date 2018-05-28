@@ -1,19 +1,116 @@
+/*
+  Color Variables
+*/
+/*
+Font-size
+*/
+/*
+ - Test variables, border - test and such
+*/
+@font-face {
+  font-family: RickAndMorty;
+  src: url(./fonts/MISFITS_.TTF); }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: RickAndMorty, sans-serif; }
+
+.main {
+  background-color: black;
+  font-size: 50px; }
+
 .nav {
+  font-family: RickAndMorty, sans-serif;
+  letter-spacing: 0.1rem;
+  color: #1B963D;
   border: 3px solid #ffd1c3;
   padding: 3px;
   text-align: center;
   margin-bottom: 20px; }
 
 .searchbox {
-  border: 3px solid magenta;
+  border: 3px solid #ffd1c3;
   padding: 3px;
   text-align: center;
   margin-bottom: 20px; }
+  .searchbox input {
+    padding: 14px 20px;
+    width: 55%;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 0.1rem;
+    outline: none; }
+    .searchbox input:focus {
+      border: 1px solid #A0F951; }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif; }
+.pagination {
+  padding: 8px 4px;
+  font-size: 1.6rem;
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+  .pagination__left, .pagination__right {
+    padding: 8px 12px;
+    border: 3px solid #1B963D;
+    transition: 0.4s all ease; }
+    .pagination__left:hover, .pagination__right:hover {
+      cursor: pointer;
+      border: 3px solid #A0F951;
+      transition: 0.4s all ease; }
+    .pagination__left:active, .pagination__right:active {
+      transform: translateY(2px);
+      color: #1B963D; }
 
-.main {
-  background-color: black; }
+.footer {
+  background-color: #1B242F;
+  margin-top: 20px;
+  margin-bottom: 0;
+  text-align: center;
+  height: 200px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center; }
+  .footer__icon {
+    list-style: none;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+    display: flex;
+    height: 125px; }
+  .footer__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 20%;
+    margin-right: 1%; }
+  .footer--icon {
+    font-size: 2rem;
+    padding: 16px 24px;
+    background-color: #262F38;
+    color: #1B963D;
+    transition: all 0.4s ease; }
+    .footer--icon:hover {
+      color: #A0F951; }
+    .footer--icon:active {
+      transform: translateY(5px); }
+  .footer__portfolio {
+    text-decoration: none;
+    color: #1B963D;
+    padding: 2px 4px;
+    font-size: 17px;
+    transition: all 0.4s ease; }
+    .footer__portfolio:hover {
+      color: #A0F951;
+      transform: scale(1.05); }
+    .footer__portfolio:active {
+      transform: translateY(5px); }
+
+.copyright {
+  font-style: italic;
+  letter-spacing: 0.1rem;
+  color: #ddd;
+  font-size: 16px; }
