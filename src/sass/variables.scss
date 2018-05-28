@@ -1,6 +1,30 @@
 
 
-//test variables
+/*
+  Color Variables
+*/
+
+//Color - border
+$color-border-primary:#A1B2C2; //correlate to rick hair color
+
+//Color -portal green
+$color-portal-dark:#1B963D;
+$color-portal-light:#A0F951;
+//Color-footer
+$color-footer-primary:#1B242F;
+$color-footer-secondary:#262F38;
+
+
+/*
+Font-size
+*/
+
+/*
+ - Test variables, border - test and such
+*/
 $border-test-primary: 3px solid #ffd1c3; 
-$border-test-secondary: 3px solid magenta; 
+$border-test-two: 3px solid magenta;
+$border-button: 3px solid #1B963D;
+$border-button-active: 3px solid #A0F951; 
+//$border-test-one:3px solid magenta; 
 $padding-test: 3px ;
