@@ -1,6 +1,9 @@
 //Import scss components
 //variables and utility
 @import "./sass/variables.scss";
+//utilities anbdmixins
+@import "./sass/utilities.scss";
+@import "./sass/mixins.scss";
 //Layout
 //typography
 @import "./sass/typography.scss";
@@ -13,7 +16,7 @@
 //import font face
 @font-face {
     font-family: RickAndMorty;
-    src: url(./fonts/MISFITS_.TTF);
+    src: url("./fonts/MISFITS_.TTF");
 }
 
 body {
@@ -30,7 +33,7 @@ body {
 
 //navigation
 .nav {
-    font-family:RickAndMorty, sans-serif;
+    font-family: RickAndMorty, sans-serif;
     letter-spacing: 0.1rem;
     color: $color-portal-dark;
     border: $border-test-primary;
@@ -101,7 +104,7 @@ body {
     text-align: center;
     height: 200px;
     position: absolute;
-    bottom: 0;
+    //bottom: 0;
     width: 100%;
     text-align: center; //container for icons
     &__icon {
@@ -133,7 +136,8 @@ body {
         &:active {
             transform: translateY(5px);
         }
-    } //link for james chhun website
+    }
+    //link for james chhun website
     &__portfolio {
         text-decoration: none;
         color: $color-portal-dark;
@@ -156,3 +160,18 @@ body {
     color: #ddd;
     font-size: 16px;
 }
+
+//
+//CARDLIST and Cards
+//
+.cardlist {
+    min-height: 350px;
+
+    
+}
+//
+//CARD
+//
+.card {
+
+    }

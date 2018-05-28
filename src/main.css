@@ -7,9 +7,33 @@ Font-size
 /*
  - Test variables, border - test and such
 */
+.u--border-primary {
+  border: 3px solid #ffd1c3; }
+
+.u--border-two {
+  border: 3px solid magenta; }
+
+.u--border-button {
+  border: 3px solid #1B963D; }
+
+.u--border-button-active {
+  border: 3px solid #A0F951; }
+
+.u--p-small {
+  padding: 4px; }
+
+.u--p-med {
+  padding: 8px; }
+
+.u--p-large {
+  padding: 12px; }
+
+.u--m-auto {
+  margin: 0 auto; }
+
 @font-face {
   font-family: RickAndMorty;
-  src: url(./fonts/MISFITS_.TTF); }
+  src: url("./fonts/MISFITS_.TTF"); }
 
 body {
   margin: 0;
@@ -71,7 +95,6 @@ body {
   text-align: center;
   height: 200px;
   position: absolute;
-  bottom: 0;
   width: 100%;
   text-align: center; }
   .footer__icon {
@@ -114,3 +137,6 @@ body {
   letter-spacing: 0.1rem;
   color: #ddd;
   font-size: 16px; }
+
+.cardlist {
+  min-height: 350px; }
