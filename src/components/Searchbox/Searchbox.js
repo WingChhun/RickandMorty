@@ -13,7 +13,7 @@ class Searchbox extends Component
                 <input
                     type="text"
                     onChange={updateSearch}
-                    placeholder="Enter a name to search or filter for"/>
+                    placeholder="Enter a name to filter for on this page"/>
             </div>
 
         );
