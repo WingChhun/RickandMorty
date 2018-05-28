@@ -30,7 +30,8 @@ class Main extends Component
         locations: [], //hold locations
         episodes: [], //hold episodes
         searchBox: "",
-        Connected: false
+        Connected: false,
+        page: 1
     }
 
     updateSearch = (e) => {
@@ -69,6 +70,28 @@ class Main extends Component
         console.log("State - results", this.state.results);
         console.log("State - Connected", this.state.Connected);
     }
+    //updatePage
+    nextPage = () => {
+        let page = (this.state.page < 25
+            ? this.state.page + 1
+            : this.state.page)
+        this.setState({
+            ...this.state,
+            page
+
+        });
+        console.log("Page", this.state.page);
+    }
+    prevPage = () => {
+        let page = (this.state.page > 1
+            ? this.state.page - 1
+            : this.state.page);
+        this.setState({
+            ...this.state,
+            page
+        });
+        console.log("Page", this.state.page);
+    }
     //update Connected
     render()
     {
@@ -76,18 +99,28 @@ class Main extends Component
         }
         const updateSearch = this.updateSearch;
         const updateAPI = this.updateAPI;
+        const updatePage = this.updatePage;
         return (
 
             <div>
                 <Navigation/>
 
                 <Searchbox searchBox={this.state.searchBox} updateSearch ={updateSearch}/> {/*CardList*/}
-                <CardList searchBox ={this.state.searchBox}
+                <CardList
+                    page={this.state.page}
+                    searchBox
+                    ={this.state.searchBox}
                     infoAPI={this.state.info}
                     resultsAPI
                     ={this.state.results}
                     isConnected={this.state.Connected}updateAPI={updateAPI}/> {/*Pagination*/}
-                <Pagination/>
+                <Pagination
+                    page={this.state.page}
+                    nextPage
+                    ={this.nextPage}
+                    prevPage={this.prevPage} 
+                    updateAPI = {updateAPI}
+                    />
                 <Footer/>
 
             </div>
