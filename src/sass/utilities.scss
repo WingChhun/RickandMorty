@@ -1,0 +1,31 @@
+.u {
+    //borders
+    &--border-primary {
+        border: $border-test-primary;
+    }
+    &--border-two {
+        border: $border-test-two;
+    }
+    &--border-button {
+        border: $border-button;
+    }
+    &--border-button-active {
+        border: $border-button-active;
+    }
+    //
+    //padding
+    //
+    &--p-small {
+        padding: 4px;
+    }
+    &--p-med {
+        padding: 8px;
+    }
+    &--p-large {
+        padding: 12px;
+    }
+    //pading
+    &--m-auto {
+        margin: 0 auto;
+    }
+}
