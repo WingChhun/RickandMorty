@@ -13,11 +13,20 @@ import Footer from "../components/Footer/Footer";
 class Main extends Component
 {
 
-    //initialize state
+    /*
+ - Initialize state
+  - info object that holds
+  - initialized starter data following API format
+         - to pass proptype tests  
+  */
     state = {
-        info: {},
+        info: {
+            count:0
+        },
         results: [],
-        searchBox: "None"
+        totalresults:[],
+        searchBox: "None",
+        Connected: false
     }
 
     updateSearch = (e) => {
@@ -40,20 +49,22 @@ class Main extends Component
     // @function updateAPI @PURPOSE - pass as prop into CardList where API is
     // handled, update global state
     updateAPI = (info, results) => {
-        // expect info to be an object expect results to be an array update API set
-        // state
+        // expect info to be an object expect results to be an array update API set Also
+        const {Connected} = this.state;
+        // change COnnected to true, signaling we have contacted the API state
         this.setState({
             ...this.state,
             info,
-            results
+            results,
+            Connected: !Connected
         });
 
         //debug output to console
         console.log("State - INFO", this.state.info);
         console.log("State - results", this.state.results);
-
+        console.log("State - Connected", this.state.Connected);
     }
-
+    //update Connected
     render()
     {
         {/*Clean up and store functions into const variables*/
@@ -66,7 +77,7 @@ class Main extends Component
                 <Navigation/>
 
                 <Searchbox searchBox={this.state.searchBox} updateSearch ={updateSearch}/> {/*CardList*/}
-                <CardList updateAPI={updateAPI} accessAPI ={this.state.results}/> {/*Pagination*/}
+                <CardList infoAPI = {this.state.info}updateAPI={updateAPI} resultsAPI ={this.state.results} isConnected={this.state.Connected}/> {/*Pagination*/}
                 <Pagination/>
                 <Footer/>
 
