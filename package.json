@@ -19,7 +19,7 @@
         "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject",
         "build-css": "node-sass-chokidar    --include-path ./src ./src/main.scss ./src/main.css --include-path ./src/sass  -o",
-        "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --watch ./src/main.scss ./src/main.css --recursive",
+        "watch-css": "npm run build-css && node-sass-chokidar ./src/main.scss ./src/main.css --watch --recursive",
         "start-js": "react-scripts start",
         "start": "npm-run-all -p watch-css start-js",
         "build-js": "react-scripts build",
