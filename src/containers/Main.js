@@ -17,15 +17,19 @@ class Main extends Component
  - Initialize state
   - info object that holds
   - initialized starter data following API format
-         - to pass proptype tests  
+         - to pass proptype tests
   */
     state = {
         info: {
-            count:0
+            count: 0
         },
         results: [],
-        totalresults:[],
-        searchBox: "None",
+        totalresults: [],
+        characters: [], //hold characters
+        //locations and episodes will be expanded upon
+        locations: [], //hold locations
+        episodes: [], //hold episodes
+        searchBox: "",
         Connected: false
     }
 
@@ -56,6 +60,7 @@ class Main extends Component
             ...this.state,
             info,
             results,
+            characters: results, //extra
             Connected: !Connected
         });
 
@@ -77,7 +82,11 @@ class Main extends Component
                 <Navigation/>
 
                 <Searchbox searchBox={this.state.searchBox} updateSearch ={updateSearch}/> {/*CardList*/}
-                <CardList infoAPI = {this.state.info}updateAPI={updateAPI} resultsAPI ={this.state.results} isConnected={this.state.Connected}/> {/*Pagination*/}
+                <CardList searchBox ={this.state.searchBox}
+                    infoAPI={this.state.info}
+                    resultsAPI
+                    ={this.state.results}
+                    isConnected={this.state.Connected}updateAPI={updateAPI}/> {/*Pagination*/}
                 <Pagination/>
                 <Footer/>
 
