@@ -40,18 +40,16 @@ class CardList extends Component
     // this.state.results
     render()
     {
-        const {isConnected, resultsAPI} = this.props;
+        const {isConnected, resultsAPI, searchBox} = this.props;
 
         return (
             <div className="cardlist u--border-primary">
-                {this.mapCards}
-                <h1>CardList</h1>
 
                 {/*Display error message if not connected to API*/}
                 {(!this.props.isConnected && <h1>Could not connect to the API!</h1>)}
 
                 {/*Else render the cards*/}
-                {resultsAPI.map((card, index) => <Card key ={card.id} Card={card}>CardItem</Card>)}
+                {resultsAPI.map((card, index) => <Card Card={card} key ={card.id} searchBox={searchBox}>CardItem</Card>)}
             </div>
 
         );
