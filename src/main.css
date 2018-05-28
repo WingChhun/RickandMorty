@@ -7,30 +7,6 @@ Font-size
 /*
  - Test variables, border - test and such
 */
-.u--border-primary {
-  border: 3px solid #ffd1c3; }
-
-.u--border-two {
-  border: 3px solid magenta; }
-
-.u--border-button {
-  border: 3px solid #1B963D; }
-
-.u--border-button-active {
-  border: 3px solid #A0F951; }
-
-.u--p-small {
-  padding: 4px; }
-
-.u--p-med {
-  padding: 8px; }
-
-.u--p-large {
-  padding: 12px; }
-
-.u--m-auto {
-  margin: 0 auto; }
-
 @font-face {
   font-family: RickAndMorty;
   src: url("./fonts/MISFITS_.TTF"); }
@@ -67,6 +43,15 @@ body {
     outline: none; }
     .searchbox input:focus {
       border: 1px solid #A0F951; }
+  .searchbox__under {
+    font-size: 24px;
+    text-decoration: none; }
+    .searchbox__under a {
+      text-decoration: none;
+      color: #3DBBB1;
+      transition: all 0.4s ease; }
+      .searchbox__under a:hover {
+        color: #A0F951; }
 
 .pagination {
   padding: 8px 4px;
@@ -145,9 +130,11 @@ body {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
-  align-content: center; }
+  align-content: center;
+  margin: 80px 0; }
 
 .card {
+  position: relative;
   flex: 1 0 24%;
   max-width: 24%;
   border: 3px solid #1B963D;
@@ -155,16 +142,18 @@ body {
   box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.4); }
   .card__img {
     width: 100%;
-    height: 300px;
-    position: relative; }
+    height: 300px; }
   .card__name {
-    color: #3DBBB1;
+    color: #1B963D;
     letter-spacing: .1rem;
     font-size: 26px;
     text-align: center;
     margin: 0;
     padding: 12px 0;
-    background-color: rgba(51, 51, 51, 0.6); }
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 45%;
+    width: 100%; }
   .card__list--container {
     padding: 0;
     list-style: none;
@@ -180,3 +169,5 @@ body {
     border-bottom: 2px solid #1B963D; }
     .card__list--item:last-child {
       border-bottom: none; }
+    .card__list--item--value {
+      color: #3DBBB1; }
