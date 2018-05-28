@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
-
+import "../../main.css";
 class Pagination extends Component
 {
 
     render()
     {
         return (
-            <div>
-                <h1>Pagination</h1>
+            <div className="pagination">
+
+                <p className="pagination__left">Previous</p>
+                <p className="pagination__right">Next</p>
             </div>
 
         );
