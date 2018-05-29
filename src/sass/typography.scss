@@ -1,0 +1,26 @@
+html {
+    font-size: 62.5%; //reset REMS, to 10px = 1rem;
+    font-family: RickAndMorty, sans-serif; //Font size depending on screen size
+    //Lowest REM possible is 8px
+    @include respond(desktop) {
+        font-size: 56.25%; //9px = 1rem
+    }
+    @include respond(phone) {
+        font-size: 56.25%; //8.6 px = 1rem
+    }
+    @include respond(tablet) {
+        // width < 900?
+        font-size: 50%; //1 rem = 8px, 8/16 = 50%
+    }
+    @include respond(desktop-large) {
+        font-size: 76.25%;
+    }
+}
+
+//TODO: Default font size 
+body
+{   margin: 0;
+    padding: 0;
+    font-family: RickAndMorty, sans-serif;
+    font-size:$fontSize-default;
+}
