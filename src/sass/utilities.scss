@@ -1,5 +1,5 @@
 .u {
-    //borders
+    //TODO: Borders
     &--border-primary {
         border: $border-test-primary;
     }
@@ -11,9 +11,8 @@
     }
     &--border-button-active {
         border: $border-button-active;
-    }
-    //
-    //padding
+    } //
+    //TODO: Padding
     //
     &--p-small {
         padding: 4px;
@@ -23,9 +22,11 @@
     }
     &--p-large {
         padding: 12px;
-    }
-    //pading
+    } //pading
     &--m-auto {
         margin: 0 auto;
+    } //TODO: COlors
+    &-color-portal-dark {
+        color: $color-portal-dark;
     }
 }
