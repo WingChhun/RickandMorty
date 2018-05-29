@@ -7,18 +7,62 @@ Font-size
 /*
  - Test variables, border - test and such
 */
-@font-face {
-  font-family: RickAndMorty;
-  src: url("./fonts/MISFITS_.TTF"); }
+.u--border-primary {
+  border: 3px solid #ffd1c3; }
+
+.u--border-two {
+  border: 3px solid magenta; }
+
+.u--border-button {
+  border: 3px solid #1B963D; }
+
+.u--border-button-active {
+  border: 3px solid #A0F951; }
+
+.u--p-small {
+  padding: 4px; }
+
+.u--p-med {
+  padding: 8px; }
+
+.u--p-large {
+  padding: 12px; }
+
+.u--m-auto {
+  margin: 0 auto; }
+
+.u-color-portal-dark {
+  color: #1B963D; }
+
+html {
+  font-size: 62.5%;
+  font-family: RickAndMorty, sans-serif; }
+  @media only screen and (max-width: 59em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 28.125em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 48em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 77.5em) {
+    html {
+      font-size: 76.25%; } }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: RickAndMorty, sans-serif; }
+  font-family: RickAndMorty, sans-serif;
+  font-size: 16px; }
+
+@font-face {
+  font-family: RickAndMorty;
+  src: url("./fonts/MISFITS_.TTF"); }
 
 .main {
   background-color: black;
-  font-size: 50px; }
+  font-size: 5rem; }
 
 .nav h1 {
   font-family: RickAndMorty, sans-serif;
@@ -26,25 +70,25 @@ body {
   color: #1B963D;
   padding: 3px;
   text-align: center;
-  font-size: 50px;
-  margin-bottom: 20px;
+  font-size: 5rem;
+  margin-bottom: 2rem;
   transform: rotate(-2deg); }
 
 .searchbox {
   padding: 3px;
   text-align: center;
-  margin-bottom: 20px; }
+  margin: 4rem 0; }
   .searchbox input {
-    padding: 14px 20px;
+    padding: 1.4rem 2rem;
     width: 55%;
     text-align: center;
-    font-size: 16px;
+    font-size: 1.6rem;
     letter-spacing: 0.1rem;
     outline: none; }
     .searchbox input:focus {
-      border: 1px solid #A0F951; }
+      border: 0.1rem solid #A0F951; }
   .searchbox__under {
-    font-size: 24px;
+    font-size: 2.4rem;
     text-decoration: none; }
     .searchbox__under a {
       text-decoration: none;
@@ -54,18 +98,25 @@ body {
         color: #A0F951; }
 
 .pagination {
-  padding: 8px 4px;
+  max-height: 200px;
+  padding: 0.8rem 0.4rem;
   font-size: 1.6rem;
   width: 60%;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around; }
+  @media only screen and (max-width: 48em) {
+    .pagination {
+      width: 85%; } }
   .pagination__left, .pagination__right {
-    padding: 8px 12px;
+    padding: 0.8rem 1.2rem;
     border: 3px solid #1B963D;
-    font-size: 36px;
+    font-size: 3.6rem;
     transition: 0.4s all ease; }
+    @media only screen and (max-width: 28.125em) {
+      .pagination__left, .pagination__right {
+        font-size: 2.5rem; } }
     .pagination__left:hover, .pagination__right:hover {
       cursor: pointer;
       border: 3px solid #A0F951;
@@ -74,9 +125,84 @@ body {
       transform: translateY(2px);
       color: #1B963D; }
 
+.cardlist {
+  min-height: 350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 8rem 0; }
+
+.card {
+  position: relative;
+  flex: 1 0 24%;
+  max-width: 24%;
+  border: 3px solid #1B963D;
+  margin-bottom: 1rem;
+  box-shadow: 0.4rem 0.7rem 1rem rgba(0, 0, 0, 0.4); }
+  @media only screen and (max-width: 48em) {
+    .card {
+      flex: 1 0 47.5%;
+      max-width: 47.5%; } }
+  @media only screen and (max-width: 28.125em) {
+    .card {
+      flex: 1 0 48%;
+      max-width: 48%; } }
+  .card__img {
+    width: 100%;
+    height: 300px; }
+    @media only screen and (min-width: 77.5em) {
+      .card__img {
+        height: 350px; } }
+    @media only screen and (max-width: 28.125em) {
+      .card__img {
+        height: 225px; } }
+    .card__img--container {
+      position: relative; }
+  .card__name {
+    color: #1B963D;
+    letter-spacing: 0.1rem;
+    font-size: 2.6rem;
+    text-align: center;
+    margin: 0;
+    padding: 1.2rem 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 45%;
+    width: 100%; }
+    @media only screen and (max-width: 48em) {
+      .card__name {
+        font-size: 2rem;
+        padding: 1.4rem 0;
+        top: 0; } }
+    @media only screen and (min-width: 77.5em) {
+      .card__name {
+        top: 50%; } }
+    @media only screen and (max-width: 59em) {
+      .card__name {
+        top: 51%; } }
+  .card__list--container {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column; }
+  .card__list--item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.3rem 1rem;
+    font-size: 1.6rem;
+    letter-spacing: 0.05rem;
+    border-bottom: 2px solid #1B963D; }
+    .card__list--item:last-child {
+      border-bottom: none; }
+    .card__list--item--value {
+      color: #3DBBB1; }
+
 .footer {
   background-color: #1B242F;
-  margin-top: 20px;
+  margin-top: 2rem;
   margin-bottom: 0;
   text-align: center;
   height: 200px;
@@ -90,15 +216,33 @@ body {
     justify-content: space-between;
     display: flex;
     height: 125px; }
+    @media only screen and (max-width: 48em) {
+      .footer__icon {
+        width: 100%; } }
+    @media only screen and (max-width: 28.125em) {
+      .footer__icon {
+        padding: 0;
+        justify-content: space-around;
+        flex-wrap: wrap; } }
   .footer__container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1 0 20%;
-    margin-right: 1%; }
+    flex: 1 0 23.5%;
+    max-width: 23.5%; }
+    .footer__container:not(.footer__container:last-child) {
+      margin-right: 1%; }
+    @media only screen and (max-width: 48em) {
+      .footer__container {
+        flex: 1 0 23%;
+        max-width: 23%; } }
+    @media only screen and (max-width: 28.125em) {
+      .footer__container {
+        flex: 1 0 40%;
+        max-width: 40%; } }
   .footer--icon {
     font-size: 2rem;
-    padding: 16px 24px;
+    padding: 1.6rem 2.4rem;
     background-color: #262F38;
     color: #1B963D;
     transition: all 0.4s ease; }
@@ -109,8 +253,8 @@ body {
   .footer__portfolio {
     text-decoration: none;
     color: #1B963D;
-    padding: 2px 4px;
-    font-size: 17px;
+    padding: 0.2rem 0.4rem;
+    font-size: 1.7rem;
     transition: all 0.4s ease; }
     .footer__portfolio:hover {
       color: #A0F951;
@@ -122,52 +266,4 @@ body {
   font-style: italic;
   letter-spacing: 0.1rem;
   color: #ddd;
-  font-size: 16px; }
-
-.cardlist {
-  min-height: 350px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-content: center;
-  margin: 80px 0; }
-
-.card {
-  position: relative;
-  flex: 1 0 24%;
-  max-width: 24%;
-  border: 3px solid #1B963D;
-  margin-bottom: 1rem;
-  box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.4); }
-  .card__img {
-    width: 100%;
-    height: 300px; }
-  .card__name {
-    color: #1B963D;
-    letter-spacing: .1rem;
-    font-size: 26px;
-    text-align: center;
-    margin: 0;
-    padding: 12px 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    position: absolute;
-    top: 45%;
-    width: 100%; }
-  .card__list--container {
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column; }
-  .card__list--item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 3px 10px;
-    font-size: 16px;
-    letter-spacing: .5px;
-    border-bottom: 2px solid #1B963D; }
-    .card__list--item:last-child {
-      border-bottom: none; }
-    .card__list--item--value {
-      color: #3DBBB1; }
+  font-size: 1.6rem; }
