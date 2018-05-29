@@ -9,13 +9,14 @@ let API_INFO = {};
 let API_RESULTS = [];
 class CardList extends Component
 {
+    //TODO: Constructor
     constructor(props)
     {
         super(props);
         this.updateAPI = this.props.updateAPI;
         this.page = this.props.page;
     }
-    //handle API
+    //TODO: componentDidMount - API CALL
     async componentDidMount()
     {
 
@@ -27,39 +28,59 @@ class CardList extends Component
             .props
             .updateAPI(info, results);
 
-        //SEt API_INFO and API_RESULTS
-        // - Will be used for Card mapping
+        // * DEBUG
         API_INFO = info;
         API_RESULTS = results;
-        //DEBUG
-        console.log("this.props.accessAPI", this.props.accessAPI);
-        console.log("API_INFO", API_INFO);
-        console.log("API_RESULTS", API_RESULTS);
+        // DEBUG console.log("this.props.accessAPI", this.props.accessAPI);
+        // console.log("API_INFO", API_INFO); console.log("API_RESULTS", API_RESULTS);
     }
 
-x
+    //TODO: @Function to filter resultsAPI using searchbox value
+    filterResults = (resultsAPI, searchBox) => {
+        // * Given this.state.results
+        // * Given this.state.searchbox
+        if (searchBox == "") {
+            return resultsAPI;
+        } else if (searchBox != "") {
+            //* Searchbox contains a value filter resultsAPI
+            searchBox = searchBox
+                .trim()
+                .toLowerCase();
+            return resultsAPI.filter((value) => {
+                let temp = value
+                    .name
+                    .trim()
+                    .toLowerCase(); //* pull name and remove space(s)
 
-    // @function mapCards @Purpose - Return Cards as List Items using
+                return temp.includes(searchBox);
+            });
+        }
+    }
+
+    // TODO: @function mapCards @Purpose - Return Cards as List Items using
     // this.state.results
     render()
     {
         const {isConnected, resultsAPI, searchBox} = this.props;
 
         return (
-            <div className="cardlist u--border-primary">
+            <div className="cardlist">
 
                 {/*Display error message if not connected to API*/}
-                {(!this.props.isConnected && <h1>Could not connect to the API!</h1>)}
+          
 
                 {/*Else render the cards*/}
-                {resultsAPI.map((card, index) => <Card Card={card} key ={card.id} searchBox={searchBox}>CardItem</Card>)}
+                {this
+                    .filterResults(resultsAPI, searchBox)
+                    .map((card, index) => <Card Card={card} key={card.id} searchBox={searchBox}/>)}
+                {/*resultsAPI.map((card, index) => <Card Card={card} key ={card.id} searchBox={searchBox}>CardItem</Card>)*/}
             </div>
 
         );
     }
 }
-/* Proptypes check - Check info to receive an
-            object - is connected to receive a boolean - updateAPI to receive a function */
+// TODO: Proptypes check - Check info to receive an     object - is connected to
+// receive a boolean - updateAPI to receive a function */
 CardList.propTypes = { //access this.state.info
     infoAPI: PropTypes
         .shape({count: PropTypes.number.isRequired})
