@@ -67,7 +67,7 @@ class CardList extends Component
             <div className="cardlist">
 
                 {/*Display error message if not connected to API*/}
-          
+              
 
                 {/*Else render the cards*/}
                 {this

@@ -7,6 +7,11 @@ import Main from "./Main";
 
 class Router extends Component {
 
+    componentWillMount()
+    {
+        //TODO: SEt the document title to custom config
+        document.title = "React - Rick and Morty ";
+    }
     render()
     {
         return (
