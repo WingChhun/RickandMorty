@@ -16,7 +16,9 @@
         "styled-components": "^3.3.0"
     },
     "scripts": {
-        "test": "react-scripts test --env=jsdom",
+        "test": "react-scripts test --env=jsdom --watchAll",
+        "test-jest":"jest --watchAll",
+        "test-all": "npm-run-all -p test test-jest ",
         "eject": "react-scripts eject",
         "build-css": "node-sass-chokidar    --include-path ./src ./src/main.scss ./src/main.css --include-path ./src/sass  -o",
         "watch-css": "npm run build-css && node-sass-chokidar ./src/main.scss ./src/main.css --watch --recursive",
@@ -24,10 +26,11 @@
         "start": "npm-run-all -p watch-css start-js",
         "build-js": "react-scripts build",
         "build": "npm-run-all build-css build-js",
-        "deploy":"gh-pages -d build",
-        "predeploy":"npm run build"
+        "deploy": "gh-pages -d build",
+        "predeploy": "npm run build"
     },
     "devDependencies": {
-        "gh-pages": "^1.1.0"
+        "gh-pages": "^1.1.0",
+        "jest": "^23.0.1"
     }
 }
