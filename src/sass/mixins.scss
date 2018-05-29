@@ -1,0 +1,31 @@
+//TODO: Define mixin for respmonsive design
+@mixin respond($breakpoint) {
+    @if $breakpoint==phone {
+        //* Phone at 450px width
+        @media only screen and (max-width: 28.125em) {
+            @content
+        }
+    }
+    ;
+    @if $breakpoint==tablet {
+        //* Phone at 768px width
+        @media only screen and (max-width: 48em) {
+            @content
+        }
+    }
+    ;
+    @if $breakpoint==desktop {
+        //* Phone at 900px width
+        @media only screen and (max-width: 59em) {
+            @content
+        }
+    }
+    ;
+    @if $breakpoint==desktop-large {
+        //* Phone at 1280px width
+        @media only screen and (min-width: 77.5em) {
+            @content
+        }
+    }
+    ;
+}
