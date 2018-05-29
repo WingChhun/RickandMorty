@@ -106,6 +106,13 @@ class Main extends Component
                 <Navigation/>
 
                 <Searchbox searchBox={this.state.searchBox} updateSearch ={updateSearch}/> {/*CardList*/}
+                <Pagination
+                    page={this.state.page}
+                    nextPage
+                    ={this.nextPage}
+                    prevPage={this.prevPage}
+                    updateAPI={updateAPI}/> {/*Show Error*/}
+                {(!this.checkConnected && <h1>Loading Data...</h1>)}
                 <CardList
                     page={this.state.page}
                     searchBox
@@ -118,16 +125,26 @@ class Main extends Component
                     page={this.state.page}
                     nextPage
                     ={this.nextPage}
-                    prevPage={this.prevPage} 
-                    updateAPI = {updateAPI}
-                    />
+                    prevPage={this.prevPage}
+                    updateAPI={updateAPI}/>
                 <Footer/>
 
             </div>
 
         );
-    }
 
+    } // !- END RENDER
+    /*
+ TODO: Return boolean value depending on state.Connected, have interval
+        */
+    checkConnected = () => {
+        setInterval(() => {
+            // * Return true if Connected is true after 1s
+            return (this.state.Connected
+                ? true
+                : false);
+        }, 800);
+    }
 }
 
 export default Main;
