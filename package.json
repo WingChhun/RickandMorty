@@ -23,7 +23,9 @@
         "start-js": "react-scripts start",
         "start": "npm-run-all -p watch-css start-js",
         "build-js": "react-scripts build",
-        "build": "npm-run-all build-css build-js"
+        "build": "npm-run-all build-css build-js",
+        "deploy":"gh-pages -d build",
+        "predeploy":"npm run build"
     },
     "devDependencies": {
         "gh-pages": "^1.1.0"
