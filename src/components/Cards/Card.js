@@ -7,6 +7,13 @@ const Card = ({
     Card = null,
     searchBox = ""
 }) => {
+    this.trimLocation = (location) => {
+        //Todo: trim location remove 'replacement dimension to save characters'
+        return location.includes("(Replacement Dimension)")
+            ? location.replace("(Replacement Dimension)", "")
+            : location
+
+    }
     this.returnElements = (Card) => {
         return (
             <ul className="card__list--container">
@@ -22,12 +29,12 @@ const Card = ({
                 </li>
                 <li className="card__list--item">
                     <p className="card__list--item--key">Origin</p>
-                    <p className="card__list--item--value">{Card.origin.name}</p>
+                    <p className="card__list--item--value">{this.trimLocation(Card.origin.name)}</p>
 
                 </li>
                 <li className="card__list--item">
                     <p className="card__list--item--key">Location</p>
-                    <p className="card__list--item--value">{Card.location.name}</p>
+                    <p className="card__list--item--value">{this.trimLocation(Card.location.name)}</p>
 
                 </li>
             </ul>
@@ -42,7 +49,9 @@ const Card = ({
             {/*ELSE - Display card*/}
 
             {/*Card__img and Name should be bundled together*/}
+            <div className="card__img-container">
             <img className="card__img" alt={Card.name} src={Card.image}/>
+            </div>
             <h3 className="card__name">{Card.name}</h3>
 
             {/*Card__list-container, hold key and value pairs*/}
